@@ -17,31 +17,6 @@
         margin-left:20%;
         margin-right:20%;
     }
-    /* Formatting search box */
-    .search-box{
-        width: 100%;
-        position: relative;
-        display: inline-block;
-        font-size: 14px;
-    }
-    .search-box input[type="text"]{
-        height: 32px;
-        padding: 5px 10px;
-        border: 1px solid #CCCCCC;
-        font-size: 14px;
-    }
-    .result{
-        color:#fff;
-        position: absolute;        
-        z-index: 999;
-        top: 100%;
-        left: 0;
-    }
-    .search-box input[type="text"], .result{
-        width: 100%;
-        box-sizing: border-box;
-    }
-    /* Formatting result items */
     .result p{
         margin: 0;
         padding: 7px 10px;
@@ -64,7 +39,7 @@ $(document).ready(function(){
         var inputVal = $(this).val();
         var resultDropdown = $(this).siblings(".result");
         if(inputVal.length){
-            $.get("backend-search.php", {term: inputVal}).done(function(data){
+            $.get("search-action.php", {term: inputVal}).done(function(data){
                 // Display the returned data in browser
                 resultDropdown.html(data);
             });
@@ -87,7 +62,7 @@ $(document).ready(function(){
             <div class="col-md-6 search-body">
                 <h2 class="search-title p-5">Live Profile Search </h2>
                 <div class="search-box">
-                    <input type="text" autocomplete="off" placeholder="Search username..." />
+                    <input type="text" class="form-control" autocomplete="off" placeholder="Search username..." />
                     <div class="result"></div>
                 </div>
             </div>
