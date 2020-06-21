@@ -27,7 +27,7 @@ if(isset($_REQUEST["term"])){
             if(mysqli_num_rows($result) > 0){
                 // Fetch result rows as an associative array
                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                    echo "<a href='profile.php?id=".$row["id"]."'><p>" . $row["firstname"] . "</p></a>";
+                    echo "<a href='profile.php?id=".$row["id"]."'><p>" . $row["firstname"] ." ". $row["lastname"] . "</p></a>";
                 }
             } else{
                 echo "<p>No matches found</p>";

@@ -80,11 +80,9 @@ mysqli_close($link);
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="images/avatar.png" alt="user-image">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $fname;?></h5>
+                        <h5 class="card-title"><?php echo $fname." ". $lname ;?></h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Firstname: <?php echo $fname;?></li>
-                        <li class="list-group-item">Lastname: <?php echo $lname;?></li>
                         <li class="list-group-item">Email: <?php echo $email;?></li>
                         <li class="list-group-item">Address: <?php echo $address;?></li>
                         <li class="list-group-item">Phone: <?php echo $phone;?></li>
